@@ -1,0 +1,125 @@
+<!-- <div>
+  <input #s type="text" placeholder="Search Food"
+   />
+  <button >Search</button>
+</div>
+
+
+
+
+
+
+ <h1 style="font-style: italic; margin-bottom: 30px; text-shadow: 30px;
+text-align: center; text-decoration: underline;">Our Restaurant</h1>
+
+<ul style="text-decoration: none;">
+    <div *ngFor="let restaurant of rest">
+    <li >
+       <a     (click)="fetchSpecificRestaurantMenu(restaurant.restName)"  >
+         <img src="{{restaurant.restPic}}" alt="image" />
+        <div class="content" >
+          <div style="padding-bottom: 10px;" >
+           <span style="font-size: large; font-weight: bolder;font-style: italic;
+           text-decoration: none;">{{restaurant.restName}} </span>  
+           <span  style="font-size: medium; float:right; text-decoration: none;
+           ">{{restaurant.restContact}}  </span>
+          </div>
+
+          <div class="adress">
+          
+           <p style="text-decoration-style: none;">
+            {{restaurant.restAddress}}
+            </p>
+          </div>
+  
+         
+        </div>
+      </a>
+    </li>
+</div>
+  
+  </ul>  -->
+ 
+  
+
+
+  <!DOCTYPE html>
+  <html>
+  
+  <head>
+    <title>Card Layout</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+      .card {
+        margin-bottom: 20px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease-in-out;
+      }
+  
+      .card:hover {
+        box-shadow: 0 4px 8px rgba(199, 68, 68, 0.561);
+      }
+  
+      .card-img-top {
+        object-fit: cover;
+        height: 200px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+  
+      .card-body {
+        padding: 20px;
+      }
+  
+      .card-title {
+        margin-bottom: 10px;
+      }
+  
+      .card-text {
+        margin-bottom: 5px;
+        display: none; /* Hide address by default */
+      }
+  
+      .card:hover .card-text {
+        display: block; /* Show address on card hover */
+      }
+  
+      .icon {
+        color: #1a080868;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <h1 style="font-style: italic; margin-bottom: 30px; text-shadow: 30px;
+text-align: center; text-decoration: underline;">Our Restaurant</h1>
+    <div class="container">
+      <div class="row" >
+        <div class="col-md-4"  *ngFor="let restaurant of rest">
+          <div class="card">
+            <img src="{{restaurant.restPic}}" class="card-img-top" alt="Image 1" (click)="fetchSpecificRestaurantMenu(restaurant.restName)" >
+            <div class="card-body">
+              <h5 class="card-title"  style="text-align: center;"
+              > &nbsp;
+              {{restaurant.restName}}</h5>
+              <p class="card-text">
+                <i class="fas fa-map-marker-alt icon"></i>{{restaurant.restAddress}}</p>
+              <p class="card-text">
+                <i class="fas fa-phone icon"></i>{{restaurant.restContact}}</p>
+            </div>
+          </div>
+        </div>
+      
+       
+      </div>
+    </div>
+  
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+  </body>
+  
+  </html>
+  
